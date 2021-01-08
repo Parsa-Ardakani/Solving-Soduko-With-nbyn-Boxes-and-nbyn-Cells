@@ -1,1 +1,1 @@
-# Solving-Soduko-with-n-n-boxes-and-n-n-Cells
+# Solving Soduko With n×n-Boxes and n×n Cells
