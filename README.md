@@ -4,119 +4,106 @@
 
 ## General Description
 
-&nbsp; &nbsp;The software can find the answer of n×n boxes with n×n cells. The target of the software is assigning numbers with minimum possible options. All information related to the functions and variable can be found below
+&nbsp; &nbsp; The software can find the answer of n×n boxes with n×n cells. The target of the software is assigning numbers with minimum possible options. All information related to the functions and variable can be found below
 
 ## Variables
 _**Note**: Every variable that starts with 'i' is used for iteration._
 
 **1. Sudoku_cells:**
 
-	It is a 2-dimensional list to store the 
-	number of cells in each box. The elements will be received 
-	by user. 
-	The first room is for the number of cells in a row
-	and the second one is for the number of cells in a column
+&nbsp; &nbsp; It is a 2-dimensional list to store the number of cells in each box. The elements will be received by user. The first room is for the number of cells in a row and the second one is for the number of cells in a column
 
 
 **2. Sudoku_box:** 
 
-	It is a 2-dimensional list to store the
-	number of boxes in our sudoku. The elements will be received
-	by user. The First room is for the number of boxes in a row
-	and the second one is for the number of boxes in a column
-
+&nbsp; &nbsp; It is a 2-dimensional list to store the number of boxes in our sudoku. The elements will be received by user. The First room is for the number of boxes in a row and the second one is for the number of boxes in a column
 
 **3. Possible_Numbers:** 
 
-	This list stores all allowed numbers.
-	for example if each box has 4 cells, the possible numbers are
-	1, 2, 3, and 4. If there is 5 cells, they are 1, 2, 3, 4, and 5.
+&nbsp; &nbsp; This list stores all allowed numbers. for example if each box has 4 cells, the possible numbers are 1, 2, 3, and 4. If there is 5 cells, they are 1, 2, 3, 4, and 5.
 
 
 **4. Sudoku:**
 
-	"Sudoku" receive the data of each cell as a list.
-	it can be a number or if it is a empty cell user should write
-	0. Then it is converted to an array and then a 3D array
-	that represents the Sudoku. This 3D array contains 3
-	major parts. In order:
-		a. Height of Sudoku: number of boxes in a column.
-		b. Length of Sudoku: number of boxes in a row.
-		c. Total Cells of a Box of the Sudoku: total number of cells in a box.
+&nbsp; &nbsp; "Sudoku" receive the data of each cell as a list. it can be a number or if it is a empty cell user should write 0. Then it is converted to an array and then a 3D array that represents the Sudoku. This 3D array contains 3 major parts. In order:
+- Height of Sudoku: number of boxes in a column.
+- Length of Sudoku: number of boxes in a row.
+- Total Cells of a Box of the Sudoku: total number of cells in a box.
 
 
 **5. Total_rows:**
 
-	It stors the number of cell in a column of the sudoku 
+&nbsp; &nbsp; It stors the number of cell in a column of the sudoku 
 
 
 **6. i:**
 
-	This variable is used for iteration and it is public
+&nbsp; &nbsp; This variable is used for iteration and it is public
 
 
 **7. i_box_length** 
 
-	It is used for iteration to reach to the number of boxes
-	in a row.
+&nbsp; &nbsp; It is used for iteration to reach to the number of boxes in a row.
 
 
 **8. i_box_height:**
 
-	It is used for iteration to reach to the number of boxes
-	in a column.
+&nbsp; &nbsp; It is used for iteration to reach to the number of boxes in a column.
 
 
 **9. i_cell_length:** 
 
-	It is used for iteration to reach to the number of cells
-	in a row of each box.
+&nbsp; &nbsp; It is used for iteration to reach to the number of cells in a row of each box.
 
 
-10. i_cell_height: 
-	It is used for iteration to reach to the number of cells
-	in a column of each box.
+**10. i_cell_height:** 
 
-11. cell_pos ──────> Its full name is cell_position. This is used to store the position
-    of the empty cell. Its type is 'List' and has three elements.
-    In order they are:
-    a. Order number of box in y-axis
-    b. Order number of box in x-axis
-    c. Order number of the cell
+&nbsp; &nbsp; It is used for iteration to reach to the number of cells in a column of each box.
 
-12. In_box_row ──────> This variable is used to store number order of first cell in the
-    row which our empty cell is. First it divides the number order of empt cell by number
-    of cell are in a row of each box. After dividing, it removes the numbers after radix point.
-    Once it is done we can undrestand the row that our empty cell is. Consider number of row 
-    in box not whole sudoku. To find the first cell in each box in that row, we multiply it by
-    the number of cells in a row  of each box.
+**11. cell_pos :**
 
-13. number ──────> It stores the number that software wants to place
+&nbsp; &nbsp; Its full name is cell_position. This is used to store the position of the empty cell. Its type is 'List' and has three elements. In order they are:
+- Sequence number of box in y-axis
+- Sequence numberr of box in x-axis
+- Sequence number of the cell
 
+**12. In_box_row:**
 
-14. Possible_Cells ──────> It stores all possible cells that we can place our number. If it is
-    not possible it would be 0, otherwise the number its selfe.
+&nbsp; &nbsp; This variable is used to store Sequence number of first cell in the row which our empty cell is. First it divides the Sequence number of empt cell by number of cell are in a row of each box. After dividing, it removes the numbers after radix point. Once it is done we can undrestand the row that our empty cell is. Consider number of row in box not whole sudoku. To find the first cell in each box in that row, we multiply it by the number of cells in a row  of each box.
+
+**13. number:**
+
+&nbsp; &nbsp; It stores the number that software wants to place
 
 
-15. Addition_TotalCells ──────> It stores the total sum of order number of cells that we can place
-    our number.
+**14. Possible_Cells:**
+
+&nbsp; &nbsp; It stores all possible cells that we can place our number. If it is not possible it would be 0, otherwise the number its selfe.
 
 
-16. Sudoku_copy  ──────> This array stores sudoku to begin with, and changes are applied to this 
-    array.
+**15. Addition_TotalCells:**
+
+&nbsp; &nbsp; It stores the total sum of Sequence numbers of cells that we can place our number.
 
 
-17. Qty ──────> This variable count number of possible cells in the box. We use it to find if the
-    number of possible cells is equal to the possiblity we are reviewing.
+**16. Sudoku_copy:**
+
+&nbsp; &nbsp; This array stores sudoku to begin with, and changes are applied to this array.
 
 
-18. box_cells_avaibility ──────> This variable is increased if the quantity of possible cells is not 
-    equal to possibility.
+**17. Qty:**
+
+&nbsp; &nbsp; This variable count number of possible cells in the box. We use it to find if the number of possible cells is equal to the possiblity we are reviewing.
 
 
-19. sudoku_boxes_avaibility ──────> This variable is increased if 'box_cells_avaibility' is equal to number
-    of possible numbers in the box. It means non of numbers can be placed in box with the possibility we
-    are reviewing.
+**18. box_cells_avaibility:**
+
+&nbsp; &nbsp;This variable is increased if the quantity of possible cells is not equal to possibility.
+
+
+**19. sudoku_boxes_avaibility:**
+
+&nbsp; &nbsp; This variable is increased if 'box_cells_avaibility' is equal to number of possible numbers in the box. It means non of numbers can be placed in box with the possibility we are reviewing.
 
 
 20. Backtrack ──────> It stores the position of numbers in boxes if their possible cells are more than 1.
@@ -202,18 +189,18 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
     In order they are::
 
     a.  Checking The Column ──────> This section analyses all cells that are in the same 
-        row with the empty cell. All cells in a box are not separated. Their order number 
+        row with the empty cell. All cells in a box are not separated. Their sequence number 
         starts from 0 to the number of cells in a box. The software uses the module to find 
-        cells under each other. The order number of cells is divided by the number of cells 
+        cells under each other. The sequence number of cells is divided by the number of cells 
         in each box row, and have the same remainder are in the same column.
 
-    b. Checking The Row ──────> In the beginning, the software finds the order number of the 
-        first cell in each box row. We know the order number of all cells in a row follows the 
-        same algorithm. The software divides the order number of empty cell by the number of cells 
+    b. Checking The Row ──────> In the beginning, the software finds the sequence number of the 
+        first cell in each box row. We know the sequence number of all cells in a row follows the 
+        same algorithm. The software divides the sequence number of empty cell by the number of cells 
         in a row of each box. Then, it will remove the radix point. The result shows the order of 
         the row. It just needs to multiply the result by the number of cells in a row in each box. 
-        Then, it finds the order number of the first cell of the row in each box. For example, consider 
-        the order number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
+        Then, it finds the sequence number of the first cell of the row in each box. For example, consider 
+        the sequence number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
         
                     0 1 2
                    ╔═════╗
@@ -225,10 +212,10 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
                    ╚═════╝
 
         From the figure, it is clear that the number of its row is 1. Our array also shows that its order 
-        is 4(starting from 0), so the order number of the first cell is 3, which is 5. We will have the 
+        is 4(starting from 0), so the sequence number of the first cell is 3, which is 5. We will have the 
         same result using our formula. 4 divided by three is 1.333.  After removing numbers after radix 
         point, it would be 1, which the number of our row. If we multiply one by three, which is equal 
-        to three we will have the order number of the first cell in each box and the intended row.
+        to three we will have the sequence number of the first cell in each box and the intended row.
 
         It is only required to monitor each cell. When all cells of the box in the intended row are 
         analyzed, the software jumps to the next box. It continues until all cells of all boxes in the 
