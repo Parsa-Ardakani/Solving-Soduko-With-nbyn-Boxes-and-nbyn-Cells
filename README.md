@@ -257,7 +257,7 @@ All proceeds are employed to solve the Sudoku. The software returns the Sudoku w
 
 
 
-**6. wrong_correct:** Desired function act as a filter to analyze the Sudoku if it is correct. It contains three major parts.
+**6. wrong_correct:** Desired function acts as a filter to analyze the Sudoku if it is correct. It contains three major parts.
     
 - Checking Cells of Boxes: This section of the code investigates each box if there is any repeated or forbidden number. The software selects the first cell and compares it with the next cells. It goes to the next one and contrasts the remaining cells after the desired one. The Sudoku is wrong if the intended cell is equal to the left cells after.
     
