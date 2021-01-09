@@ -4,15 +4,13 @@
 
 ## General Description
 
-	The software can find the answer of n×n boxes with n×n cells. 
-	The target of the software is assigning numbers with minimum 
-	possible options. All information related to the functions and 
-	variable can be found below:
+&nbsp; &nbsp;The software can find the answer of n×n boxes with n×n cells. The target of the software is assigning numbers with minimum possible options. All information related to the functions and variable can be found below
 
 ## Variables
 _**Note**: Every variable that starts with 'i' is used for iteration._
 
 **1. Sudoku_cells:**
+
 	It is a 2-dimensional list to store the 
 	number of cells in each box. The elements will be received 
 	by user. 
@@ -20,47 +18,64 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
 	and the second one is for the number of cells in a column
 
 
-2. Sudoku_box ──────> It is a 2-dimensional list to store the
-    number of boxes in our sudoku. The elements will be received
-    by user. The First room is for the number of boxes in a row
-    and the second one is for the number of boxes in a column
+**2. Sudoku_box:** 
+
+	It is a 2-dimensional list to store the
+	number of boxes in our sudoku. The elements will be received
+	by user. The First room is for the number of boxes in a row
+	and the second one is for the number of boxes in a column
 
 
-3. Possible_Numbers ──────> This list stores all allowed numbers.
-    for example if each box has 4 cells, the possible numbers are
-    1, 2, 3, and 4. If there is 5 cells, they are 1, 2, 3, 4, and 5.
+**3. Possible_Numbers:** 
+
+	This list stores all allowed numbers.
+	for example if each box has 4 cells, the possible numbers are
+	1, 2, 3, and 4. If there is 5 cells, they are 1, 2, 3, 4, and 5.
 
 
-4. Sudoku ──────> "Sudoku" receive the data of each cell as a list.
-    it can be a number or if it is a empty cell user should write
-    0. Then it is converted to an array and then a 3D array
-    that represents the Sudoku. This 3D array contains 3
-    major parts. In order:
-        a. Height of Sudoku: number of boxes in a column.
-        b. Length of Sudoku: number of boxes in a row.
-        c. Total Cells of a Box of the Sudoku: total number of cells in a box.
+**4. Sudoku:**
+
+	"Sudoku" receive the data of each cell as a list.
+	it can be a number or if it is a empty cell user should write
+	0. Then it is converted to an array and then a 3D array
+	that represents the Sudoku. This 3D array contains 3
+	major parts. In order:
+		a. Height of Sudoku: number of boxes in a column.
+		b. Length of Sudoku: number of boxes in a row.
+		c. Total Cells of a Box of the Sudoku: total number of cells in a box.
 
 
-5. Total_rows  ──────> It stors the number of cell in a column of the sudoku 
+**5. Total_rows:**
+
+	It stors the number of cell in a column of the sudoku 
 
 
-6. i ──────> This variable is used for iteration and it is public
+**6. i:**
+
+	This variable is used for iteration and it is public
 
 
-7. i_box_length ──────> It is used for iteration to reach to the number of boxes
-    in a row.
+**7. i_box_length** 
+
+	It is used for iteration to reach to the number of boxes
+	in a row.
 
 
-8. i_box_height ──────> It is used for iteration to reach to the number of boxes
-    in a column.
+**8. i_box_height:**
+
+	It is used for iteration to reach to the number of boxes
+	in a column.
 
 
-9. i_cell_length ──────> It is used for iteration to reach to the number of cells
-    in a row of each box.
+**9. i_cell_length:** 
+
+	It is used for iteration to reach to the number of cells
+	in a row of each box.
 
 
-10. i_cell_height ──────> It is used for iteration to reach to the number of cells
-    in a column of each box.
+10. i_cell_height: 
+	It is used for iteration to reach to the number of cells
+	in a column of each box.
 
 11. cell_pos ──────> Its full name is cell_position. This is used to store the position
     of the empty cell. Its type is 'List' and has three elements.
