@@ -13,7 +13,6 @@
 _**Note**: Every variable that starts with 'i' is used for iteration._
 
 **1. Sudoku_cells:**
-
 	It is a 2-dimensional list to store the 
 	number of cells in each box. The elements will be received 
 	by user. 
