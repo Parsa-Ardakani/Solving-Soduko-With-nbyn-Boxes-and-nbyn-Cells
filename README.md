@@ -1,10 +1,13 @@
 # Solving Soduko With n×n Boxes and n×n Cells
 
-
+&nbsp; &nbsp;
 
 ## General Description
 
 &nbsp; &nbsp; The software can find the answer of n×n boxes with n×n cells. The target of the software is assigning numbers with minimum possible options. All information related to the functions and variable can be found below
+
+&nbsp; &nbsp;
+&nbsp; &nbsp;
 
 ## Variables
 _**Note**: Every variable that starts with 'i' is used for iteration._
@@ -106,101 +109,84 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
 &nbsp; &nbsp; This variable is increased if 'box_cells_avaibility' is equal to number of possible numbers in the box. It means non of numbers can be placed in box with the possibility we are reviewing.
 
 
-20. Backtrack ──────> It stores the position of numbers in boxes if their possible cells are more than 1.
+**20. Backtrack:**
+
+&nbsp; &nbsp; It stores the position of numbers in boxes if their possible cells are more than 1.
 
 
-21. i_order ──────> It is used to store the number is sudoku base on the numbers of iteration.
+**21. i_order:**
+
+&nbsp; &nbsp; It is used to store the number is sudoku base on the numbers of iteration.
 
 
-22. filled_boxes ──────> If this variable is equal to number of total boxes, it means, sudoku is solved.
+**22. filled_boxes:**
+
+&nbsp; &nbsp; If this variable is equal to number of total boxes, it means, sudoku is solved.
 
 
-23. Allowed_Numbers ──────> This list stores numbers that can be placed in the desired box.
+**23. Allowed_Numbers:**
+
+&nbsp; &nbsp; This list stores numbers that can be placed in the desired box.
 
 
-24. i_cell ──────> This is to count cells.
+**24. i_cell:** 
+
+&nbsp; &nbsp; This is to count cells.
 
 
-25. existed_Numbers ──────> This list stores the possible numbers. It is used to find is any repeated number
-    in the column or row.
+**25. existed_Numbers:**
+
+&nbsp; &nbsp; This list stores the possible numbers. It is used to find is any repeated number in the column or row.
 
 
-26. possibility ──────> This variable stores number of possible cells for a number
-"""
+**26. possibility:**
 
-#════════════════════════ Functions ═══════════════════════════════════════
+&nbsp; &nbsp; This variable stores number of possible cells for a number
 
-"""
-1. Receiver: This function receive the three important input.
-    It has 3 parts. In order they are:
+&nbsp; &nbsp; 
 
-    a. Receiving Sudoku Grid ──────> In the beginning, it receives the number 
-        of cells in each row and each column separately. Then it asks for the 
-        number of boxes in each row and each column. It also checks the input 
-        not to be wrong.
+## Functions
 
-    b. Finding All possible Numbers ──────> In Sudoku, we have limits in 
-        using numbers. The range of numbers starts from 1, but the number of 
-        box cells defines the last number. For example, if each box has four 
-        cells, the range would be 1, 2, 3, and 4. if we have five cells, it 
-        would be 1, 2, 3, 4, and 5. So if we know the number of our cells, we 
-        easily can find all possible numbers.
 
-    c. Receive All cells values ──────> This part of the function is to get the 
-        value of defined cells. The software stores them in a list in order. Then
-        we convert the list to an array and then a 3D array. This 3D array follows 
-        the shape of the Sudoku that is defined by the user. The first part of the 
-        3D-array is for the number of rows. The second is for columns, and the last 
-        one is for the number of cells in each box.
+**1. Receiver:** This function receive the three important input. It has 3 parts. In order they are:
 
-    Variables are Used in This Function:
-        Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
+- Receiving Sudoku Grid: In the beginning, it receives the number of cells in each row and each column separately. Then it asks for the number of boxes in each row and each column. It also checks the input not to be wrong.
+
+- Finding All possible Numbers: In Sudoku, we have limits in using numbers. The range of numbers starts from 1, but the number of box cells defines the last number. For example, if each box has four cells, the range would be 1, 2, 3, and 4. if we have five cells, it would be 1, 2, 3, 4, and 5. So if we know the number of our cells, we easily can find all possible numbers.
+
+- Receive All cells values: This part of the function is to get the value of defined cells. The software stores them in a list in order. Thenwe convert the list to an array and then a 3D array. This 3D array follows the shape of the Sudoku that is defined by the user. The first part of the 3D-array is for the number of rows. The second is for columns, and the last one is for the number of cells in each box.
+
+- >**Variables are Used in This Function:**
+Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
 
 
 
 
-2. Displaying: This Function purpose is to display the sudoku
-    in a proper and beautiful shape. It contains 3 sections.
+**2. Displaying:** This Function purpose is to display the sudoku in a proper and beautiful shape. It contains 3 sections.
 
-    a. Print Numbers of the column grid ──────> This part displays
+- Print Numbers of the column grid: This part displays
         numbers of the x-axis of our sudoku. 
     
-    b. Print top border of the Sudoku ──────> I the second section
+- Print top border of the Sudoku ──────> I the second section
         program prints the top part of the sudoku border
     
-    c. Print Numbers of each row of the grid and value of each cell 
-    of the Sudoku ──────> To make our code easier and not using unnecessary libraries, 
-        we print all data related to one row. This row can be the border or the values of 
-        each cell. Our code writes the number of the row that is going to be written. 
-        Then, it prints the edge. After printing the border, it starts to write the value 
-        of each cell. Between each cell, sign "│" as the horizontal divider and "─" as the 
-        vertical divider. Between each box, we use symbols that are utilized for the sudoku 
-        border.
+- Print Numbers of each row of the grid and value of each cell of the Sudoku: To make our code easier and not using unnecessary libraries, we print all data related to one row. This row can be the border or the values of each cell. Our code writes the number of the row that is going to be written. Then, it prints the edge. After printing the border, it starts to write the value of each cell. Between each cell, sign "│" as the horizontal divider and "─" as the vertical divider. Between each box, we use symbols that are utilized for the sudoku border.
 
-    Variables are Used in This Function:
+- >**Variables are Used in This Function:**
         Sudoku_cells, Sudoku_box, Sudoku, i, i_box_length, i_box_height
         i_cell_length, i_cell_height
 
 
 
-3. Is_allowed: This function checks all cells in the row and column of the empty cell that 
-    the software wants to fill. If the number that the software wants to put in the empty 
-    cell is repeated, it returns false otherwise, it would be True. It has two parts. 
-    In order they are::
+**3. Is_allowed:** This function checks all cells in the row and column of the empty cell that the software wants to fill. If the number that the software wants to put in the empty cell is repeated, it returns false otherwise, it would be True. It has two parts. In order they are::
 
-    a.  Checking The Column ──────> This section analyses all cells that are in the same 
+- Checking The Column ──────> This section analyses all cells that are in the same 
         row with the empty cell. All cells in a box are not separated. Their sequence number 
         starts from 0 to the number of cells in a box. The software uses the module to find 
         cells under each other. The sequence number of cells is divided by the number of cells 
         in each box row, and have the same remainder are in the same column.
 
-    b. Checking The Row ──────> In the beginning, the software finds the sequence number of the 
-        first cell in each box row. We know the sequence number of all cells in a row follows the 
-        same algorithm. The software divides the sequence number of empty cell by the number of cells 
-        in a row of each box. Then, it will remove the radix point. The result shows the order of 
-        the row. It just needs to multiply the result by the number of cells in a row in each box. 
-        Then, it finds the sequence number of the first cell of the row in each box. For example, consider 
-        the sequence number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
+- Checking The Row ──────> In the beginning, the software finds the sequence number of the first cell in each box row. We know the sequence number of all cells in a row follows the same algorithm. The software divides the sequence number of empty cell by the number of cells in a row of each box. Then, it will remove the radix point. The result shows the order of the row. It just needs to multiply the result by the number of cells in a row in each box. Then, it finds the sequence number of the first cell of the row in each box. For example, consider the sequence number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
         
                     0 1 2
                    ╔═════╗
@@ -211,20 +197,14 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
                  2 ║7│8│1║ 
                    ╚═════╝
 
-        From the figure, it is clear that the number of its row is 1. Our array also shows that its order 
-        is 4(starting from 0), so the sequence number of the first cell is 3, which is 5. We will have the 
-        same result using our formula. 4 divided by three is 1.333.  After removing numbers after radix 
-        point, it would be 1, which the number of our row. If we multiply one by three, which is equal 
-        to three we will have the sequence number of the first cell in each box and the intended row.
-
-        It is only required to monitor each cell. When all cells of the box in the intended row are 
-        analyzed, the software jumps to the next box. It continues until all cells of all boxes in the 
-        row are analyzed. If there is no same number it is fine otherwise, it returns False.
+	From the figure, it is clear that the number of its row is 1. Our array also shows that its order is 4(starting from 0), so the sequence number of the first cell is 3, which is 5. We will have the same result using our formula. 4 divided by three is 1.333.  After removing numbers after radix point, it would be 1, which the number of our row. If we multiply one by three, which is equal to three we will have the sequence number of the first cell in each box and the intended row.
+	
+	It is only required to monitor each cell. When all cells of the box in the intended row are analyzed, the software jumps to the next box. It continues until all cells of all boxes in the row are analyzed. If there is no same number it is fine otherwise, it returns False.
 
     
     If there is no problem, the function returns True. It means that the number is allowed to be there.
 
-    Variables are Used in This Function:
+- **Variables are Used in This Function:**
         sudoku, Sudoku_cells, Sudoku_box, cell_pos, number
         i, i_box_length, i_box_height, In_box_row
 
