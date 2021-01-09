@@ -150,7 +150,7 @@ _**Note**: Every variable that starts with 'i' is used for iteration._
 ## Functions
 
 
-**1. Receiver:** This function receive the three important input. It has 3 parts. In order they are:
+**1. Receiver:** This function receives the three important input. It has 3 parts. In order they are:
 
 - Receiving Sudoku Grid: In the beginning, it receives the number of cells in each row and each column separately. Then it asks for the number of boxes in each row and each column. It also checks the input not to be wrong.
 
