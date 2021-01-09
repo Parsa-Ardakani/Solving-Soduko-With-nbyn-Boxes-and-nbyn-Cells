@@ -3,6 +3,8 @@
 &nbsp; &nbsp;
 
 ## General Description
+***Note: Some of the examples are wrong to show how the program works. 
+    The software display an error, so do not forget to comment them.***
 
 &nbsp; &nbsp; The software can find the answer of n×n boxes with n×n cells. The target of the software is assigning numbers with minimum possible options. All information related to the functions and variable can be found below
 
