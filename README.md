@@ -204,56 +204,50 @@ Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
     
     If there is no problem, the function returns True. It means that the number is allowed to be there.
 
-- **Variables are Used in This Function:**
+- >**Variables are Used in This Function:**
         sudoku, Sudoku_cells, Sudoku_box, cell_pos, number
         i, i_box_length, i_box_height, In_box_row
 
 
 
-4. Backtrack_Check: The software stores the position of filled cells. The program resets the Sudoku when 
-    the solution is wrong. The action of caching filled cells help software to avoid repeating the same 
-    mistakes in solving the Sudoku. This function helps software not to save the same cells with a 
-    similar position and the number inside.
+**4. Backtrack_Check:** The software stores the position of filled cells. The program resets the Sudoku when the solution is wrong. The action of caching filled cells help software to avoid repeating the same mistakes in solving the Sudoku. This function helps software not to save the same cells with a similar position and the number inside.
 
-    Variables are Used in This Function: 
+- >**Variables are Used in This Function:** 
         number, Backtrack, Box_Position, i
 
 
 
-5. Solve_Sudoku: This function carries the main job of the software. It appropriates other 'functions' to 
-    analyze and solve the Sudoku. The entire operation is within an interminable loop, and the software 
-    breaks this loop when our Sudoku is solved. The function contains two major parts. All of the below 
-    actions happen for each box of the Sudoku:
+**5. Solve_Sudoku:** This function carries the main job of the software. It appropriates other 'functions' to analyze and solve the Sudoku. The entire operation is within an interminable loop, and the software breaks this loop when our Sudoku is solved. The function contains two major parts. All of the below actions happen for each box of the Sudoku:
     
-    a. Checking The Box ──────> The function seeks for possible numbers that are missing from the box. It caches 
+- Checking The Box: The function seeks for possible numbers that are missing from the box. It caches 
         missed numbers in 'Allowed_Numbers.' Variable 'filled_boxes' will be raised by one if 'Allowed_Numbers' 
         is blank. It means all cells of the box are full. The Sudoku is solved when 'fiiled_boxes' is equal to 
         the total number of boxes.
 
-    b. Checking Cells and Fill Them
+- Checking Cells and Fill Them
 
-        ● The First Step ══> The function checks each number of 'Allowed_Numbers' in all cells of the box. It cashes 
-            each cell if the number is allowed to be. For example, the software can assign the number 3 to the first and 
-            fifth cell. The function cashes possibilities in a variable called 'Possible_Cells.' If we implement the example 
-            in a 3*3 box, 'Possible_Cells' will be equivalent to [3,0,0,0,3,0,0,0,0].  
+  -		The First Step: The function checks each number of 'Allowed_Numbers' in all cells of the box. 
+		It cashes each cell if the number is allowed to be. For example, the software can assign the number 
+		3 to the first and fifth cell. The function cashes possibilities in a variable called 'Possible_Cells.' 
+		If we implement the example in a 3*3 box, 'Possible_Cells' will be equivalent to [3,0,0,0,3,0,0,0,0].  
 
-        ● The Second Step ══> The software proposes to apply logic as much as possible. It explores for numbers in the box 
-            that only have one opportunity. The software analysis counts the number of elements of 'Possible_cells' that are 
-            greater than zero. The software keeps limits if in find any number that obeys the rules. If there is no number, 
-            it changes the rules. It continues as long as the permissible opportunities are less than or equal to the total 
-            number of box cells. For example, the software begins with one-optional numbers. The software search for 
-            two-optional numbers if all numbers have two or more possibilities. The software converts rules to the one-optional 
-            when it assigns a number to the Sudoku.
-		    The software stores each action. It helps to avoid replicating solutions or slips (mentioned in 'Backtrack_check'). 
-            The software removes the latest cashed data when it already checked all possible options of the number.
+  - 	The Second Step: The software proposes to apply logic as much as possible. It explores for numbers in 
+  		the box that only have one opportunity. The software analysis counts the number of elements of 
+		'Possible_cells' that are greater than zero. The software keeps limits if in find any number that obeys 
+		the rules. If there is no number, it changes the rules. It continues as long as the permissible opportunities 
+		are less than or equal to the total number of box cells. For example, the software begins with one-optional
+		numbers. The software search for two-optional numbers if all numbers have two or more possibilities. The 
+		software converts rules to the one-optional when it assigns a number to the Sudoku.The software stores each 
+		action. It helps to avoid replicating solutions or slips (mentioned in 'Backtrack_check'). The software removes 
+		the latest cashed data when it already checked all possible options of the number.
         
-        ● The Third Step ══> The answer or the Sudoku would be incorrect. The software can figure out the solution is wrong when 
-            a number is dropping in the box, but laws won't allow the software to put the desired number. If 'Backtrack' is blank, 
-            it indicates the Sudoku is wrong.
+  - 	The Third Step: The answer or the Sudoku would be incorrect. The software can figure out the solution is wrong when 
+  		a number is dropping in the box, but laws won't allow the software to put the desired number. If 'Backtrack' is 
+		blank, it indicates the Sudoku is wrong.
 
-    All proceeds are employed to solve the Sudoku. The software returns the Sudoku when it is solved.
+All proceeds are employed to solve the Sudoku. The software returns the Sudoku when it is solved.
 
-    Variables are Used in This Function:
+- >**Variables are Used in This Function:**
         Sudoku, Sudoku_cells, Sudoku_box, Possible_Numbers, possibility
         Sudoku_copy, Possible_Cells, Qty, box_cells_avaibility
         sudoku_boxes_avaibility, Backtrack, i_order, sudoku_boxes_avaibility
@@ -261,23 +255,16 @@ Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
 
 
 
-6. wrong_correct: Desired function act as a filter to analyze the Sudoku if it is correct. It contains three major parts.
+**6. wrong_correct:** Desired function act as a filter to analyze the Sudoku if it is correct. It contains three major parts.
     
-    Checking Cells of Boxes ──────> This section of the code investigates each box if there is any repeated or forbidden 
-        number. The software selects the first cell and compares it with the next cells. It goes to the next one and contrasts 
-        the remaining cells after the desired one. The Sudoku is wrong if the intended cell is equal to the left cells after.
+- Checking Cells of Boxes: This section of the code investigates each box if there is any repeated or forbidden number. The software selects the first cell and compares it with the next cells. It goes to the next one and contrasts the remaining cells after the desired one. The Sudoku is wrong if the intended cell is equal to the left cells after.
     
-    Checking Rows of Sudoku ──────> The piece of code uses a different technic to find if there are repeated numbers in a row. 
-        The software uses allowed numbers of the Sudoku. It analyzes each cell of the row and removes the number when it faces a filled 
-        cell. The Sudoku is wrong if the number of the cell does not exist.
+- Checking Rows of Sudoku: The piece of code uses a different technic to find if there are repeated numbers in a row. The software uses allowed numbers of the Sudoku. It analyzes each cell of the row and removes the number when it faces a filled cell. The Sudoku is wrong if the number of the cell does not exist.
     
-    Checking Column of Sudoku ──────> The piece of code uses a different technic to find if there are repeated numbers in a column. 
-        The software uses allowed numbers of the Sudoku. It analyzes each cell of the column and removes the number when it faces a filled 
-        cell. The Sudoku is wrong if the number of the cell does not exist.
+- Checking Column of Sudoku: The piece of code uses a different technic to find if there are repeated numbers in a column. The software uses allowed numbers of the Sudoku. It analyzes each cell of the column and removes the number when it faces a filled cell. The Sudoku is wrong if the number of the cell does not exist.
     
-    Variables are Used in This Function:
+- >**Variables are Used in This Function:**
         Sudoku, Sudoku_cells, Sudoku_box, Possible_Numbers
         i_box_height, i_box_length, i_cell i_cell_height 
         i_cell_length, existed_Numbers
 
-"""
