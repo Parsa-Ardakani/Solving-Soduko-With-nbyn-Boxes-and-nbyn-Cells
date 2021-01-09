@@ -166,11 +166,9 @@ Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
 
 **2. Displaying:** This Function purpose is to display the sudoku in a proper and beautiful shape. It contains 3 sections.
 
-- Print Numbers of the column grid: This part displays
-        numbers of the x-axis of our sudoku. 
+- Print Numbers of the column grid: This part displays numbers of the x-axis of our sudoku. 
     
-- Print top border of the Sudoku ──────> I the second section
-        program prints the top part of the sudoku border
+- Print top border of the Sudoku: I the second section program prints the top part of the sudoku border
     
 - Print Numbers of each row of the grid and value of each cell of the Sudoku: To make our code easier and not using unnecessary libraries, we print all data related to one row. This row can be the border or the values of each cell. Our code writes the number of the row that is going to be written. Then, it prints the edge. After printing the border, it starts to write the value of each cell. Between each cell, sign "│" as the horizontal divider and "─" as the vertical divider. Between each box, we use symbols that are utilized for the sudoku border.
 
@@ -182,13 +180,9 @@ Sudoku_cells, Sudoku_box, Possible_Numbers, Sudoku, i
 
 **3. Is_allowed:** This function checks all cells in the row and column of the empty cell that the software wants to fill. If the number that the software wants to put in the empty cell is repeated, it returns false otherwise, it would be True. It has two parts. In order they are::
 
-- Checking The Column ──────> This section analyses all cells that are in the same 
-        row with the empty cell. All cells in a box are not separated. Their sequence number 
-        starts from 0 to the number of cells in a box. The software uses the module to find 
-        cells under each other. The sequence number of cells is divided by the number of cells 
-        in each box row, and have the same remainder are in the same column.
+- Checking The Column: This section analyses all cells that are in the same row with the empty cell. All cells in a box are not separated. Their sequence number starts from 0 to the number of cells in a box. The software uses the module to find cells under each other. The sequence number of cells is divided by the number of cells in each box row, and have the same remainder are in the same column.
 
-- Checking The Row ──────> In the beginning, the software finds the sequence number of the first cell in each box row. We know the sequence number of all cells in a row follows the same algorithm. The software divides the sequence number of empty cell by the number of cells in a row of each box. Then, it will remove the radix point. The result shows the order of the row. It just needs to multiply the result by the number of cells in a row in each box. Then, it finds the sequence number of the first cell of the row in each box. For example, consider the sequence number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
+- Checking The Ro: In the beginning, the software finds the sequence number of the first cell in each box row. We know the sequence number of all cells in a row follows the same algorithm. The software divides the sequence number of empty cell by the number of cells in a row of each box. Then, it will remove the radix point. The result shows the order of the row. It just needs to multiply the result by the number of cells in a row in each box. Then, it finds the sequence number of the first cell of the row in each box. For example, consider the sequence number of the empty cell is 4, and the number of cells in a box is 9 ([9, 2, 3, 5, 0, 6, 7, 8, 1]). 
         
                     0 1 2
                    ╔═════╗
