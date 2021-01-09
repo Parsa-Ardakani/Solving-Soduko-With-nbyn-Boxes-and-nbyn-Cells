@@ -4,7 +4,7 @@
 
 ## General Description
 
-The software can find the answer of n×n boxes with n×n cells. 
+> The software can find the answer of n×n boxes with n×n cells. 
 The target of the software is assigning numbers with minimum 
 possible options. All information related to the functions and 
 variable can be found below:
@@ -42,7 +42,7 @@ and the second one is for the number of cells in a column
         c. Total Cells of a Box of the Sudoku: total number of cells in a box.
 
 
-5. Total_rows  ──────> It stors the number of cell in a column of the sudoku
+5. Total_rows  ──────> It stors the number of cell in a column of the sudoku 
 
 
 6. i ──────> This variable is used for iteration and it is public
