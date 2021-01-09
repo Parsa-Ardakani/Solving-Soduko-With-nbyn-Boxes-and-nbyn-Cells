@@ -4,21 +4,21 @@
 
 ## General Description
 
-> The software can find the answer of n×n boxes with n×n cells. 
-The target of the software is assigning numbers with minimum 
-possible options. All information related to the functions and 
-variable can be found below:
+	The software can find the answer of n×n boxes with n×n cells. 
+	The target of the software is assigning numbers with minimum 
+	possible options. All information related to the functions and 
+	variable can be found below:
 
 ## Variables
 _**Note**: Every variable that starts with 'i' is used for iteration._
 
 **1. Sudoku_cells:**
 
-It is a 2-dimensional list to store the 
-number of cells in each box. The elements will be received 
-by user. 
-The first room is for the number of cells in a row
-and the second one is for the number of cells in a column
+	It is a 2-dimensional list to store the 
+	number of cells in each box. The elements will be received 
+	by user. 
+	The first room is for the number of cells in a row
+	and the second one is for the number of cells in a column
 
 
 2. Sudoku_box ──────> It is a 2-dimensional list to store the
